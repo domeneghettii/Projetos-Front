@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.backgroundGradient {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute; /* mudou de fixed */
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(-45deg, #11b9d6, #6a11cb, #b0dadd, #ff6ec7);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.scrollContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: calc(100vh - 40px);
+    align-items: center;
+}
+
+.scrollContainer::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.card {
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
+    height: auto;
+    padding: 40px 36px 32px 36px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around; 
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(106, 17, 203, 0.15), 0 1.5px 8px rgba(0,0,0,0.07);
+    border-radius: 20px;
+    border: 1.5px solid #e3e6f0;
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(106, 17, 203, 0.2), 0 4px 16px rgba(0,0,0,0.1);
+    
+}
+
+.imageContainer {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(106, 17, 203, 0.13);
+    background: #f3f6fa;
+    border: 3px solid #e3e6f0;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 24px auto; 
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.image:hover {
+    transform: scale(1.04);
+}
+
+.text {
+    font-size: 1.08rem;
+    color: #333;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.textTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6a11cb;
+    margin-bottom: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.customButton {
+    background: linear-gradient(135deg, #6a11cb 0%, #b3a8c7 100%); 
+    border-color: #6a11cb; 
+    color: #fff; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.customButton:hover {
+    background-color: #4e0e9e; 
+    border-color: #4e0e9e; 
+}
+
+
+@media (max-width: 768px) {
+    .scrollContainer {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .card {
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+        padding: 30px 24px 24px 24px;
+    }
+    
+    .imageContainer {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 16px auto;
+    }
+}
