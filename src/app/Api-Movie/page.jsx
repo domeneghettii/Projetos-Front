@@ -2,22 +2,20 @@
 import React from "react";
 import styles from "../Api-Movie/Api.module.css";
 import Footer from "../Componente/Footer";
-
 export default function ApiInfo() {
   return (
     <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <div className={styles.header}>
-          Sobre a API Movie Animation
-          <div className={styles.links}>
-            <a href="/" className={styles.button}>🏠 Voltar para Home</a>
-            <a href="/Filmes" className={styles.button}>🎬 Ver Filmes</a>
-          </div>
+      <div className={styles.header}>
+        <span>Movie Animation</span>
+        <div className={styles.links}>
+          <a href="/" className={styles.button}>🏠 Voltar para Home</a>
+          <a href="/Filmes" className={styles.button}>🎬 Ver Filmes</a>
         </div>
+      </div>
 
+      <div className={styles.mainContent}>
         <div className={styles.card}>
           <h1>Sobre a API Movie Animation</h1>
-
           <h2>Nome da API</h2>
           <p>API Movie Animation</p>
 
@@ -59,14 +57,13 @@ export default function ApiInfo() {
         </div>
       </div>
 
-        <div className={styles.footer}>
-      <Footer />  
-      <div className={styles.footerLinks}>
-        <a href="/" className={styles.footerLink}>🏠 Voltar para Home</a>
-        <a href="/Filmes" className={styles.footerLink}>🎬 Ver Filmes</a>
-      </div>
+      <footer className={styles.footer}>
+        <Footer />
+        <div className={styles.footerLinks}>
+          <a href="/" className={styles.footerLink}>🏠 Voltar para Home</a>
+          <a href="/Filmes" className={styles.footerLink}>🎬 Ver Filmes</a>
+        </div>
+      </footer>
     </div>
-    </div>
-  
   );
 }

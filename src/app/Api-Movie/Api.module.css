@@ -1,165 +1,191 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
     width: 100%;
     background-color: #4afff698;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-}
-
-.mainContent {
-    flex: 1; 
+  }
+  
+  .header {
+    width: 100vw; 
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d9488;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  
+  .links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .links a {
+    margin: 0 10px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #0d9488;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #14b8a6;
+  }
+  
+  .mainContent {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
     padding: 20px;
-}
-
-.footer {
-    background-color: #0d9488;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.header {
+  }
+  
+  .card {
     width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: #0d9488; 
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: bold;
-    box-sizing: border-box;
-}
-.card {
-    width: 100%;
-    max-width: 600px;   
+    max-width: 600px;
     margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     display: flex;
-    flex-direction: column;      
+    flex-direction: column;
     text-align: center;
     box-sizing: border-box;
-}
-
-.card h1 {
+  }
+  
+  .card h1 {
     font-size: 28px;
     font-weight: bold;
     color: #0d9488;
-    text-align: center; 
+    text-align: center;
     margin-bottom: 20px;
-}
-
-.card h2 {
+  }
+  
+  .card h2 {
     margin-top: 20px;
     font-size: 22px;
     font-weight: bold;
-    color: #0d9488; 
-}
+    color: #0d9488;
+  }
 
-.link {
+  .card ul {
     font-size: 16px;
     color: #444;
     line-height: 1.6;
-    font-family: 'Arial', sans-serif;
-}
-
-.card ul {
+  }
+  
+  .card code {
+    background-color: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
+  .card ul {
     list-style-type: disc;
     text-align: left;
     margin: 15px 30px;
     color: #333;
-}
-
-.card li {
+  }
+  
+  .card li {
     margin-bottom: 6px;
-}
-
-.link {
+  }
+  
+  .link {
     display: inline-block;
     margin: 6px 0;
     color: #14b8a6;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
-}
-
-.link:hover {
+  }
+  
+  .link:hover {
     color: #0d9488;
     text-decoration: underline;
-}
-
-.links {
+  }
+  
+  .footer {
+    background-color: #0d9488;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footerLinks {
+    margin-top: 10px;
     display: flex;
-    gap: 10px; 
-}
-
-.links a {
-    margin: 0 10px;
-}
-
-.button {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background-color: #0d9488; 
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footerLink {
     color: #ffffff;
-    font-weight: 600;
     text-decoration: none;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-.button:hover {
-    background-color: #14b8a6;
-}
-
-@media (max-width: 768px) {
+    font-weight: 600;
+  }
+  
+  .footerLink:hover {
+    color: #ffd700;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
     .card {
-        padding: 30px;
-        margin: 30px 10px;
+      padding: 30px;
+      margin: 30px 10px;
     }
-
+  
     .card h1 {
-        font-size: 24px;
+      font-size: 24px;
     }
-
+  
     .card h2 {
-        font-size: 20px;
+      font-size: 20px;
     }
-
+  
     .button {
-        font-size: 13px;
-        padding: 5px 10px;
+      font-size: 13px;
+      padding: 5px 10px;
     }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     .card {
-        padding: 20px;
-        margin: 20px 5px;
+      padding: 20px;
+      margin: 20px 5px;
     }
-
+  
     .card h1 {
-        font-size: 20px;
+      font-size: 20px;
     }
-
+  
     .card h2 {
-        font-size: 18px;
+      font-size: 18px;
     }
-
+  
     .button {
-        font-size: 12px;
-        padding: 4px 8px;
+      font-size: 12px;
+      padding: 4px 8px;
     }
-}
+  }
+  

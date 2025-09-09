@@ -8,13 +8,14 @@
 }
 
 .image {
-  width: 150px;
+  width: 260px;
+  height: 260px;
   margin-bottom: 16px;
 }
 
 .title {
   font-size: 5rem;
-  color: #ff6f4d;
+  color: #16c0b8;
   font-weight: bold;
   margin: 0;
 }
@@ -46,9 +47,9 @@
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  border: 2px solid #ff6f4d;
+  border: 2px solid #49d8e2;
   background: #fff;
-  color: #ff6f4d;
+  color: #4dffe1;
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 500;
@@ -60,7 +61,7 @@
 .button:hover,
 .button:active,
 .button:focus {
-  background: #ff6f4d;
+  background: #4adfcb;
   color: #fff;
   outline: none;
 }

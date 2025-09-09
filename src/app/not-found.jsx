@@ -6,7 +6,7 @@ export default function NotFound() {
     return (
         <div className={style.notFound}>
           <Image
-            src="/errorgif.gif"
+            src="/error.gif"
             alt="Página não encontrada"
             width={250}
             height={300}
