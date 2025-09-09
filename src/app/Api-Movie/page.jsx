@@ -39,19 +39,13 @@ export default function ApiInfo() {
           <ul>
             <li><code>id</code> – Identificador único</li>
             <li><code>title</code> – Título do filme</li>
-            <li><code>year</code> – Ano de lançamento</li>
-            <li><code>genres</code> – Lista de gêneros</li>
-            <li><code>director</code> – Diretor</li>
-            <li><code>actors</code> – Atores principais</li>
-            <li><code>plot</code> – Sinopse</li>
             <li><code>posterURL</code> – URL da imagem do pôster</li>
           </ul>
 
           <h2>Descrição</h2>
           <p>
             A API Movie Animation disponibiliza informações detalhadas sobre
-            filmes de animação, incluindo título, ano de lançamento, gêneros,
-            diretores, elenco, sinopse e pôster. É ideal para quem deseja explorar
+            filmes de animação, incluindo título e pôster. É ideal para quem deseja explorar
             o universo das animações de forma prática e rápida.
           </p>
         </div>

@@ -17,7 +17,7 @@ export default function NotFound() {
             <p className={style.text}>A página que você procura não existe.</p>
             <div className={style.buttonGroup}>
                 <Link href="/" className={style.button}>🏠 Voltar para Home</Link>
-                <Link href="/contato" className={style.button}>💬 Fale Conosco</Link>
+                <Link href="/Filmes" className={style.button}>🎬 Ver Filmes</Link>
             </div>
         </div>
     )
