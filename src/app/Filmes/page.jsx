@@ -1,66 +1,79 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Filmes.module.css";
+import Footer from "../Componente/Footer";
 
 export default function Filmes() {
   const [filmes, setFilmes] = useState([]);
-  const [carregando, setCarregando] = useState(false);
+  const [filmeSelecionado, setFilmeSelecionado] = useState(null);
 
-  const buscarFilmes = async () => {
-    setCarregando(true);
-    try {
-      const res = await fetch("https://api.sampleapis.com/movies/animation");
-      const data = await res.json();
-      setFilmes(data);
-    } catch (erro) {
-      console.error("Erro ao buscar filmes:", erro);
-    } finally {
-      setCarregando(false);
-    }
+  useEffect(() => {
+    fetch("https://api.sampleapis.com/movies/animation")
+      .then((res) => res.json())
+      .then((data) => setFilmes(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const handleCardClick = (filme) => {
+    setFilmeSelecionado(filme);
+  };
+
+  const handleVoltar = () => {
+    setFilmeSelecionado(null);
   };
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>🎬 Filmes de Animação</h1>
-        <button onClick={buscarFilmes} disabled={carregando}>
-          {carregando ? "Carregando..." : "Buscar Filmes"}
-        </button>
-      </header>
-
-      <main className={styles.cardsContainer}>
-        {filmes.map((filme) => (
-          <div key={filme.id} className={styles.card}>
-            <img src={filme.posterURL} alt={filme.title} />
-            <div className={styles.cardContent}>
-              <h2>{filme.title}</h2>
-              <p>
-                IMDb:{" "}
-                <a
-                  href={`https://www.imdb.com/title/${filme.imdbId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {filme.imdbId}
-                </a>
-              </p>
-              <button
-                onClick={() =>
-                  window.open(
-                    `https://www.imdb.com/title/${filme.imdbId}`,
-                    "_blank"
-                  )
-                }
-              >
-                Ver Filmes
-              </button>
+      {!filmeSelecionado ? (
+        <div className={styles.grid}>
+          {filmes.map((filme) => (
+            <div
+              key={filme.id}
+              className={styles.card}
+              onClick={() => handleCardClick(filme)}
+            >
+              <img src={filme.posterURL} alt={filme.title} />
+              <h3>{filme.title}</h3>
             </div>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.filmeDetalhe}>
+          <h2>{filmeSelecionado.title}</h2>
+          <img src={filmeSelecionado.posterURL} alt={filmeSelecionado.title} />
+          <p>ID do filme: {filmeSelecionado.id}</p>
+
+          <div className={styles.botoes}>
+            <a
+              href={`https://www.imdb.com/title/${filmeSelecionado.imdbId}/mediaviewer`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fotos
+            </a>
+            <a
+              href={`https://www.imdb.com/title/${filmeSelecionado.imdbId}/reviews`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Avaliações
+            </a>
+            <a
+              href={`https://www.imdb.com/title/${filmeSelecionado.imdbId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Trailer
+            </a>
           </div>
-          
-          
-        ))}
-      </main>
+
+          <button className={styles.voltar} onClick={handleVoltar}>
+            🔙 Voltar
+          </button>
+        </div>
+      )}
+
+      <Footer />
     </div>
-    
   );
 }
