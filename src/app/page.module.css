@@ -5,7 +5,7 @@
     width: 100%;
     background: linear-gradient(-45deg, #a8edea, #32e2b8, #0ec9a7, #b0dadd, #43e97b, #38f9d7);
     background-size: 400% 400%;
-    animation: gradientMove 3s linear infinite; /* tempo menor para mudar mais rápido */
+    animation: gradientMove 3s linear infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,6 @@
     font-size: 1.1rem;
     box-shadow: 0 2px 8px rgba(32, 227, 196, 0.15);
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
     outline: none;
 }
 

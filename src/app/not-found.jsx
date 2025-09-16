@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import style from "../app/Styles/Not.module.css";
+import style from "./not-found.module.css";
 
 export default function NotFound() {
     return (
